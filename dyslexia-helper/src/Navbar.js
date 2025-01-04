@@ -4,22 +4,23 @@ import "./styles/styles.css";
 
 function Navbar() {
   return (
-    <div className='App'>
+    <div>
       <header className='App-header'>
-        <nav className='navbar fixed-top navbar-expand-lg bg-dark-subtle'>
-          <div className='container-fluid'>
+        <nav className='navbar fixed-top navbar-expand-lg navBG'>
+          <div className='container-fluid '>
             <Link
               to='/'
               className='mynavbar'
               style={{ textDecoration: "none" }}
             >
-              Thr33
+              Dyslexia Helper
             </Link>
             <div
               className='collapse navbar-collapse'
               id='navbarSupportedContent'
             >
               <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+                <li style={{ paddingLeft: "1rem" }}> </li>
                 <li className='mynavbar-item'>
                   <Link
                     to='/'
@@ -29,7 +30,8 @@ function Navbar() {
                     Home
                   </Link>
                 </li>
-                <li className='mynavbar-item'>
+
+                {/* <li className='mynavbar-item'>
                   <Link
                     to='/training_plans'
                     style={{ textDecoration: "none" }}
@@ -55,7 +57,7 @@ function Navbar() {
                   >
                     Customer Feedback
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Landing from "./Landing";
+import Dropbox from "./Dropbox";
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,12 +12,14 @@ root.render(
       <div className='container-fluid' style={{ padding: "1rem" }}>
         <Navbar />
       </div>
-      <Routes>
-        <Route path='/' element={<Landing />} />
-        {/* <Route path='/training_plans' element={<TrainingPlans />} />
-          <Route path='/appointments' element={<ScheduleAppt />} />
-          <Route path='/feedback' element={<CustomerFeedback />} /> */}
-      </Routes>
+      <div style={{ paddingTop: "4rem" }}>
+        <Routes>
+          <Route path='/' element={<Dropbox />} />
+          {/* <Route path='/training_plans' element={<TrainingPlans />} />
+            <Route path='/appointments' element={<ScheduleAppt />} />
+            <Route path='/feedback' element={<CustomerFeedback />} /> */}
+        </Routes>
+      </div>
     </Router>
   </div>
 );
