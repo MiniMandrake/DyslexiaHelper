@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Dropbox from "./Dropbox";
 import Navbar from "./Navbar";
+import MindMap from "./MindMap";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -15,9 +16,9 @@ root.render(
       <div style={{ paddingTop: "4rem" }}>
         <Routes>
           <Route path='/' element={<Dropbox />} />
-          {/* <Route path='/training_plans' element={<TrainingPlans />} />
-            <Route path='/appointments' element={<ScheduleAppt />} />
-            <Route path='/feedback' element={<CustomerFeedback />} /> */}
+          <Route path='/mind_map' element={<MindMap />} />
+          {/* <Route path='/appointments' element={<ScheduleAppt />} />
+          <Route path='/feedback' element={<CustomerFeedback />} /> */}
         </Routes>
       </div>
     </Router>

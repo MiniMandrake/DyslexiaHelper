@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./styles/dropbox.css";
+import { Container } from "react-bootstrap";
 
-function FileDropzone() {
+function Dropbox() {
   const [output, setOutput] = useState(
     "Hello! Input a file above and your text will appear here!"
   );
@@ -21,16 +22,33 @@ function FileDropzone() {
   };
 
   return (
-    <div className='container-fluid'>
-      <div id='dropzone' onDrop={dropHandler} onDragOver={dragOverHandler}>
-        <p style={{ textAlign: "center" }}>
-          Drag one file here. <br />
-          <i>Currently not functional</i>
-        </p>
+    <Container>
+      <div
+        className='centerMyItem'
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div id='dropzone' onDrop={dropHandler} onDragOver={dragOverHandler}>
+          <p style={{ textAlign: "center" }}>
+            Drag one file here. <br />
+            <i>Currently not functional</i>
+          </p>
+        </div>
       </div>
-      <p>{output}</p>
-    </div>
+      <p
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {output}
+      </p>
+    </Container>
   );
 }
 
-export default FileDropzone;
+export default Dropbox;

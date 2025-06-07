@@ -13,7 +13,7 @@ function Navbar() {
               className='mynavbar'
               style={{ textDecoration: "none" }}
             >
-              Dyslexia Helper
+              Helper
             </Link>
             <div
               className='collapse navbar-collapse'
@@ -31,33 +31,45 @@ function Navbar() {
                   </Link>
                 </li>
 
-                {/* <li className='mynavbar-item'>
-                  <Link
-                    to='/training_plans'
-                    style={{ textDecoration: "none" }}
-                    className='mynav-item nav-link'
-                  >
-                    Training Plans
-                  </Link>
-                </li>
                 <li className='mynavbar-item'>
                   <Link
-                    to='/appointments'
+                    to='/bionic_reading'
                     style={{ textDecoration: "none" }}
                     className='mynav-item nav-link'
                   >
-                    Appointments
+                    Bionic Reading
                   </Link>
                 </li>
+
                 <li className='mynavbar-item'>
                   <Link
-                    to='/feedback'
+                    to='/mind_map'
                     style={{ textDecoration: "none" }}
                     className='mynav-item nav-link'
                   >
-                    Customer Feedback
+                    Mind Map
                   </Link>
-                </li> */}
+                </li>
+
+                <li className='mynavbar-item'>
+                  <Link
+                    to='/tts'
+                    style={{ textDecoration: "none" }}
+                    className='mynav-item nav-link'
+                  >
+                    Text To Speech
+                  </Link>
+                </li>
+
+                <li className='mynavbar-item'>
+                  <Link
+                    to='/color_overlay'
+                    style={{ textDecoration: "none" }}
+                    className='mynav-item nav-link'
+                  >
+                    Color Overlay
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
