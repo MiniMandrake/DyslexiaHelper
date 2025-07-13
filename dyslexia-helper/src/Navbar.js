@@ -5,7 +5,7 @@ import "./styles/styles.css";
 function Navbar() {
   return (
     <div>
-      <header className='App-header'>
+      <header>
         <nav className='navbar fixed-top navbar-expand-lg navBG'>
           <div className='container-fluid '>
             <Link
@@ -21,7 +21,7 @@ function Navbar() {
             >
               <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                 <li style={{ paddingLeft: "1rem" }}> </li>
-                <li className='mynavbar-item'>
+                {/* <li className='mynavbar-item'>
                   <Link
                     to='/'
                     style={{ textDecoration: "none" }}
@@ -33,11 +33,11 @@ function Navbar() {
 
                 <li className='mynavbar-item'>
                   <Link
-                    to='/bionic_reading'
+                    to='/font_convertor'
                     style={{ textDecoration: "none" }}
                     className='mynav-item nav-link'
                   >
-                    Bionic Reading
+                    Font Convertor
                   </Link>
                 </li>
 
@@ -69,11 +69,12 @@ function Navbar() {
                   >
                     Color Overlay
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
         </nav>
+        <div style={{ paddingBottom: "4.5rem" }}></div>
       </header>
     </div>
   );

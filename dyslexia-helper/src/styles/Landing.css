@@ -1,0 +1,39 @@
+.main {
+  background: #3b3e43;
+  font-family: "Times New Roman", Times, serif;
+  color: #e5e5e5;
+  font-size: 40px;
+  height: 100vh;
+  padding: 4rem;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 5 equal‑width columns */
+  padding: 1.5rem 0.75rem;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 equal‑width columns */
+  gap: 2rem; /* space between items */
+  padding: 10rem;
+}
+
+/* A simple card‑like look for each cell */
+.grid-item {
+  width: 16rem;
+  height: 10rem;
+  background: #4db0ac; /* dark slate */
+  color: #f9fafb; /* light text */
+  padding: 1.5rem 0.75rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.08);
+  transition: transform 0.15s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+}
