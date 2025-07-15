@@ -2,6 +2,7 @@ import "./styles/App.css";
 import "./styles/Landing.css";
 import Dropbox from "./Dropbox";
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 
 function Landing() {
   // const [payload, setPayload] = useState("");
@@ -37,7 +38,7 @@ function URL_dropper({ url, setURL }) {
   };
 
   return (
-    <div style={{ padding: "1rem" }}>
+    <div className='twoColumns-item' style={{ padding: "1rem" }}>
       <input
         type='text'
         value={url}
@@ -58,7 +59,52 @@ function URL_dropper({ url, setURL }) {
 }
 
 function File_Dropper(params) {
-  return <div>HEHEHHAHA</div>;
+  const [output, setOutput] = useState(
+    "Hello! Input a file above and your text will appear here!"
+  );
+
+  const dropHandler = (event) => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file) {
+      setOutput(`File dropped: ${file.name}`);
+    } else {
+      setOutput("No file detected. Please try again!");
+    }
+  };
+
+  const dragOverHandler = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <Container className='twoColumns-item'>
+      <div
+        className='centerMyItem'
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div id='dropzone' onDrop={dropHandler} onDragOver={dragOverHandler}>
+          <p style={{ textAlign: "center" }}>
+            Drag one file here. <br />
+            <i>Currently not functional</i>
+          </p>
+        </div>
+      </div>
+      <p
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {output}
+      </p>
+    </Container>
+  );
 }
 
 export default Landing;
