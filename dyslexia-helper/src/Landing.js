@@ -6,17 +6,16 @@ import { Container } from "react-bootstrap";
 
 function Landing() {
   // const [payload, setPayload] = useState("");
-  const items = Array.from({ length: 15 }, (_, i) => `Item ${i + 1}`);
+  const items = Array.from({ length: 15 }, (_, i) => `Item${i + 1}`);
 
   const [url, setURL] = useState("");
+  const [file, setFile] = useState(null);
 
   return (
     <div className='main'>
-      {/* <Dropbox /> */}
-
       <div className='twoColumns'>
         <URL_dropper url={url} setURL={setURL} />
-        <File_Dropper />
+        <File_Dropper file={file} setFile={setFile} />
         {url}
       </div>
 
@@ -27,6 +26,19 @@ function Landing() {
           </div>
         ))}
       </div> */}
+      {file && (
+        <div>
+          <p>
+            <strong>Filename:</strong> {file.name}
+          </p>
+          <p>
+            <strong>Type:</strong> {file.type}
+          </p>
+          <p>
+            <strong>Size:</strong> {file.size} bytes
+          </p>
+        </div>
+      )}
     </div>
   );
 }
@@ -58,16 +70,39 @@ function URL_dropper({ url, setURL }) {
   );
 }
 
-function File_Dropper(params) {
+function File_Dropper({ file, setFile }) {
   const [output, setOutput] = useState(
     "Hello! Input a file above and your text will appear here!"
   );
 
+  const filestuff = () => {
+    return (
+      file && (
+        <div>
+          <p>
+            <strong>Filename:</strong> {file.name}
+          </p>
+          <p>
+            <strong>Type:</strong> {file.type}
+          </p>
+          <p>
+            <strong>Size:</strong> {file.size} bytes
+          </p>
+        </div>
+      )
+    );
+  };
+
   const dropHandler = (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
+
+    if (file.type === "application/pdf") {
+      setOutput("pdf detected");
+    }
     if (file) {
-      setOutput(`File dropped: ${file.name}`);
+      // setOutput(`File dropped: ${file.name}`);
+      setFile(event.dataTransfer.files[0]);
     } else {
       setOutput("No file detected. Please try again!");
     }
@@ -89,12 +124,11 @@ function File_Dropper(params) {
       >
         <div id='dropzone' onDrop={dropHandler} onDragOver={dragOverHandler}>
           <p style={{ textAlign: "center" }}>
-            Drag one file here. <br />
-            <i>Currently not functional</i>
+            Drag file here. <br />
           </p>
         </div>
       </div>
-      <p
+      {/* <p
         style={{
           display: "flex",
           justifyContent: "center",
@@ -102,7 +136,10 @@ function File_Dropper(params) {
         }}
       >
         {output}
-      </p>
+      </p> */}
+
+      {filestuff()}
+      {output}
     </Container>
   );
 }
